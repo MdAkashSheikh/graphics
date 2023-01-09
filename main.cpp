@@ -359,7 +359,7 @@ void Idle()
     glutPostRedisplay();
 }
 
-void summer()
+void day()
 {
     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
@@ -408,7 +408,7 @@ void summer()
 }
 
 
-void summerNight()
+void night()
 {
     glClearColor(0.1f, 0.1f, 0.1f, 0.0f);
     glClear(GL_COLOR_BUFFER_BIT);
@@ -457,22 +457,22 @@ void handleKeypress(unsigned char key, int x, int y)
     {
     case  'd':
         glutDestroyWindow(1);
-        glutInitWindowSize(800, 700);
+        glutInitWindowSize(1000, 700);
 
         glutCreateWindow("village scenario");
         glutKeyboardFunc(handleKeypress);
-        glutDisplayFunc(summer);
+        glutDisplayFunc(day);
 
         glutPostRedisplay();
         break;
 
     case 'n':
         glutDestroyWindow(1);
-        glutInitWindowSize(800, 700);
+        glutInitWindowSize(1000, 700);
 
         glutCreateWindow("village scenario");
         glutKeyboardFunc(handleKeypress);
-        glutDisplayFunc(summerNight);
+        glutDisplayFunc(night);
 
         glutPostRedisplay();
         break;
@@ -561,7 +561,7 @@ void StartingText()
         }
         else glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, text[i]);
     }
-    sprintf(text, "SALIM SHADMAN ANKUR & PROPA PUNAM",5.00,8.00);
+    sprintf(text, "SALIM SHADMAN ANKUR",5.00,8.00);
     glColor3f(0, 0, 1);
     glRasterPos2f( -10, 12 );
     for(int i = 0; text[i] != '\0'; i++)
@@ -621,10 +621,9 @@ void Display1()
 int main(int argc, char* argv[])
 {
     glutInit(&argc, argv);
-    glutCreateWindow("Akash");
-    glutReshapeWindow(800, 700);
+    glutCreateWindow("Akash Sheikh");
+    glutReshapeWindow(1000, 700);
     glutKeyboardFunc(handleKeypress);
-    glShadeModel( GL_SMOOTH );
     glutDisplayFunc(Display1);
     glutTimerFunc(100, cloudUp, 0);
     glutTimerFunc(10, boatUp, 0);
